@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portfolio Demo</title>
+  <title>ShopEasy - Demo Store</title>
   <style>
     /* Reset */
     * {
@@ -22,120 +22,125 @@
     /* Header */
     header {
       background: #222;
-      color: #fff;
-      padding: 20px 40px;
-      text-align: center;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 30px;
     }
 
-    header h1 {
-      font-size: 2.5rem;
-    }
-
-    header p {
-      margin-top: 5px;
-      color: #ccc;
-    }
-
-    /* Navigation */
-    nav {
-      background: #444;
-      padding: 10px 0;
-      text-align: center;
-    }
-
-    nav a {
-      color: #fff;
-      text-decoration: none;
-      margin: 0 15px;
+    header .logo {
+      font-size: 1.8rem;
       font-weight: bold;
     }
 
-    nav a:hover {
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    nav ul li a:hover {
       color: #ff9800;
     }
 
     /* Hero Section */
     #hero {
-      background: url("https://picsum.photos/1200/500") no-repeat center center/cover;
+      background: url("https://picsum.photos/1200/500?shop") no-repeat center center/cover;
       color: white;
       text-align: center;
       padding: 120px 20px;
     }
 
-    #hero h2 {
-      font-size: 2.5rem;
-      margin-bottom: 10px;
+    #hero h1 {
+      font-size: 3rem;
+      margin-bottom: 15px;
     }
 
     #hero p {
       font-size: 1.2rem;
-    }
-
-    /* About */
-    #about {
-      padding: 60px 20px;
-      text-align: center;
-    }
-
-    #about h2 {
-      font-size: 2rem;
       margin-bottom: 20px;
     }
 
-    #about p {
-      max-width: 700px;
-      margin: auto;
+    .btn {
+      background: #ff9800;
+      color: white;
+      padding: 12px 25px;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 6px;
     }
 
-    /* Projects */
-    #projects {
-      background: #eee;
+    .btn:hover {
+      background: #e68900;
+    }
+
+    /* Products */
+    #products {
       padding: 60px 20px;
       text-align: center;
     }
 
-    #projects h2 {
+    #products h2 {
       font-size: 2rem;
       margin-bottom: 40px;
     }
 
-    .project-grid {
+    .product-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-      max-width: 1000px;
+      gap: 25px;
+      max-width: 1100px;
       margin: auto;
     }
 
     .card {
       background: #fff;
       padding: 20px;
-      border-radius: 10px;
+      border-radius: 12px;
       box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      transition: transform 0.2s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
     }
 
     .card img {
       max-width: 100%;
       border-radius: 10px;
+      margin-bottom: 15px;
     }
 
     .card h3 {
-      margin: 15px 0 10px;
+      margin: 10px 0;
     }
 
-    /* Contact */
-    #contact {
-      padding: 60px 20px;
-      text-align: center;
+    .price {
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: #27ae60;
+      margin-bottom: 15px;
     }
 
-    #contact h2 {
-      font-size: 2rem;
-      margin-bottom: 20px;
+    .buy-btn {
+      background: #27ae60;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 1rem;
     }
 
-    #contact p {
-      margin-bottom: 10px;
+    .buy-btn:hover {
+      background: #1e8449;
     }
 
     /* Footer */
@@ -151,65 +156,27 @@
 <body>
   <!-- Header -->
   <header>
-    <h1>John Doe</h1>
-    <p>Web Developer | Designer | Freelancer</p>
+    <div class="logo">ShopEasy</div>
+    <nav>
+      <ul>
+        <li><a href="#hero">Home</a></li>
+        <li><a href="#products">Products</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
   </header>
 
-  <!-- Navigation -->
-  <nav>
-    <a href="#hero">Home</a>
-    <a href="#about">About</a>
-    <a href="#projects">Projects</a>
-    <a href="#contact">Contact</a>
-  </nav>
-
-  <!-- Hero Section -->
+  <!-- Hero -->
   <section id="hero">
-    <h2>Hello, I'm John 👋</h2>
-    <p>I create modern and responsive websites.</p>
+    <h1>Welcome to ShopEasy</h1>
+    <p>Your one-stop shop for amazing products at the best prices.</p>
+    <a href="#products" class="btn">Shop Now</a>
   </section>
 
-  <!-- About Section -->
-  <section id="about">
-    <h2>About Me</h2>
-    <p>
-      I am a passionate web developer with experience in building responsive and user-friendly websites. 
-      My skills include HTML, CSS, JavaScript, and frameworks like React. I love turning ideas into reality on the web.
-    </p>
-  </section>
-
-  <!-- Projects Section -->
-  <section id="projects">
-    <h2>My Projects</h2>
-    <div class="project-grid">
+  <!-- Products -->
+  <section id="products">
+    <h2>Our Products</h2>
+    <div class="product-grid">
       <div class="card">
-        <img src="https://picsum.photos/300/200?random=1" alt="Project 1">
-        <h3>Project One</h3>
-        <p>A modern landing page design for startups.</p>
-      </div>
-      <div class="card">
-        <img src="https://picsum.photos/300/200?random=2" alt="Project 2">
-        <h3>Project Two</h3>
-        <p>An e-commerce store with responsive design.</p>
-      </div>
-      <div class="card">
-        <img src="https://picsum.photos/300/200?random=3" alt="Project 3">
-        <h3>Project Three</h3>
-        <p>A portfolio website showcasing creative work.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Contact Section -->
-  <section id="contact">
-    <h2>Contact Me</h2>
-    <p>Email: <a href="mailto:john@example.com">john@example.com</a></p>
-    <p>Phone: +123 456 7890</p>
-  </section>
-
-  <!-- Footer -->
-  <footer>
-    <p>&copy; 2025 John Doe | All Rights Reserved</p>
-  </footer>
-</body>
-</html>
+        <img src="https://picsum.photos/300/200?random=11" alt="Product 1">
+        <h3>Wireless Headp
